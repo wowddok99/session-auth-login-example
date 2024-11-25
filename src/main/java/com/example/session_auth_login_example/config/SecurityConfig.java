@@ -46,12 +46,12 @@ public class SecurityConfig {
                     .requestMatchers("/api/test").hasAuthority("ROLE_ADMIN")
                     .anyRequest().authenticated() // 나머지 요청은 인증 필요
             )
-            .formLogin(form -> form
-                    .loginProcessingUrl("/login") // 로그인 처리 URL
-                    .usernameParameter("username") // 사용자 이름 파라미터
-                    .passwordParameter("password") // 비밀번호 파라미터
-                    .defaultSuccessUrl("/home", true) // 로그인 성공 후 리다이렉트 URL
-            )
+//            .formLogin(form -> form
+//                    .loginProcessingUrl("/login") // 로그인 처리 URL
+//                    .usernameParameter("username") // 사용자 이름 파라미터
+//                    .passwordParameter("password") // 비밀번호 파라미터
+//                    .defaultSuccessUrl("/home", true) // 로그인 성공 후 리다이렉트 URL
+//            )
             .logout(logout -> logout
                     .logoutUrl("/logout") // 로그아웃 URL
                     .logoutSuccessUrl("/login") // 로그아웃 후 리다이렉트 URL
